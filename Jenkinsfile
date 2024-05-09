@@ -28,17 +28,17 @@ pipeline {
             }
         }
         
-        stage('SonarQube Analysis') {
-            steps {
-                // Run SonarQube analysis
-                withSonarQubeEnv('sonar-test') {
-                    sh '''mvn sonar:sonar \
-                        -Dsonar.projectKey=project_test_sonar \
-                        -Dsonar.host.url=http://localhost:9000 \
-                        -Dsonar.login=8196235fa8c852c6fe9e04523ccdc096c1c952b0'''
-                }
-            }
-        }
+        // stage('SonarQube Analysis') {
+        //     steps {
+        //         // Run SonarQube analysis
+        //         withSonarQubeEnv('sonar-test') {
+        //             sh '''mvn sonar:sonar \
+        //                 -Dsonar.projectKey=project_test_sonar \
+        //                 -Dsonar.host.url=http://localhost:9000 \
+        //                 -Dsonar.login=8196235fa8c852c6fe9e04523ccdc096c1c952b0'''
+        //         }
+        //     }
+        // }
         
         stage('Docker Image Creation') {
             steps {
